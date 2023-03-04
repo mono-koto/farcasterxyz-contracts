@@ -74,11 +74,8 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Add exception for "dubious ownership"
-        run: git config --global --add safe.directory /github/workspace
-
       - name: Run Slither
-        uses: crytic/slither-action@v0.2.0
+        uses: crytic/slither-action@v0.3.0
         id: slither # Required to reference this step in the next step.
         with:
           fail-on: none # Required to avoid failing the CI run regardless of findings.
